@@ -80,3 +80,48 @@ Notes
 The project is installed and run from E: drive to save C: drive space.
 All tests are written using Cypress best practices, including beforeEach() hooks, reusable commands, and assertions.
 Tested on Chrome and Cypress v15.15.0.
+
+## Task 2 — Assertions, Aliases & Custom Commands
+
+### Overview
+Task 2 helps practice advanced Cypress skills:
+
+- Assertions (`be.visible`, `have.text`, `have.attr`)  
+- Negative assertions (`not.exist`, `not.be.visible`)  
+- Aliases (`.as()` and `cy.get("@alias")`)  
+- Custom commands for reusable code (`cy.login()`)  
+- `beforeEach()` hook to run code before each test
+
+### How to Run Task 2 Tests
+
+Open Cypress Test Runner:
+
+```bash
+npx cypress open
+Click the spec file in cypress/e2e/task2/ you want to run:
+assertions.cy.js
+alias.cy.js
+custom-command.cy.js
+
+Or run headlessly in terminal:
+
+npx cypress run --spec "cypress/e2e/task2/*.cy.js"
+Notes / Difficulty Faced
+
+One challenge was avoiding repeating login steps in multiple tests.
+I solved it by creating a custom command cy.login() in commands.js and using beforeEach() hooks to visit the homepage before every test.
+This made the tests cleaner, reusable, and easier to maintain.
+
+
+---
+
+# **Step 9: Push Task 2 to GitHub**
+
+1. Stage all new Task 2 files:
+
+```bash
+git add cypress/e2e/task2
+Commit changes:
+git commit -m "Add Task 2: Assertions, Aliases & Custom Commands"
+Push to GitHub:
+git push
